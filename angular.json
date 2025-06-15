@@ -27,6 +27,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -62,9 +63,16 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "port": 4200,
+            "host": "localhost",
+            "open": true
+          },
           "configurations": {
             "production": {
-              "buildTarget": "documentation-frontend:build:production"
+              "buildTarget": "documentation-frontend:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
               "buildTarget": "documentation-frontend:build:development"
@@ -90,6 +98,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "efecc23e-fee7-4cb2-9c0c-fdcee792eeab"
   }
 }
